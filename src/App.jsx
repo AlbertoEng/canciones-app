@@ -86,7 +86,7 @@ function App() {
           </div>
           <div className="col-12 col-md-6">
             <label htmlFor="busqueda" className='fs-2'>Buscar una Rola</label>
-          <input type="text" id='busqueda' className="form-control mb-3" name='busqueda' onChange={searchHandler}  placeholder='Escribe aqui tu cancion'/>
+          <input type="text" id='busqueda' className="form-control mb-3" name='busqueda' onChange={searchHandler}  placeholder='Escribe aqui tu cancion o artista'/>
             <ul className='list-group'>
               {
                 searchText === '' 

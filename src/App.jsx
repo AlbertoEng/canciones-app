@@ -74,7 +74,7 @@ function App() {
         <div className="row">
           <div className="col-12 col-md-6">
           <h1>Lista de Canciones</h1>
-            <form action="">
+            <form action="" className='bg-dark p-3 rounded'>
               <div className="input-group mb-3">
                 <input type="text" className="form-control" onChange={handleTextinputs} name='name' placeholder="Titulo de la Cancion" aria-label="titulo" aria-describedby="basic-addon1" />
               </div>
@@ -87,12 +87,12 @@ function App() {
           <div className="col-12 col-md-6">
             <label htmlFor="busqueda" className='fs-2'>Buscar una Rola</label>
           <input type="text" id='busqueda' className="form-control mb-3" name='busqueda' onChange={searchHandler}  placeholder='Escribe aqui tu cancion'/>
-            <ul className='list-group '>
+            <ul className='list-group'>
               {
                 searchText === '' 
                   ? songs.map(( song )=>{
                     return (<div key={song.key}>
-                      <li  className="list-group-item d-flex justify-content-between">
+                      <li  className="list-group-item d-flex justify-content-between mb-1 rounded bg-primary text-white fw-bold p-3">
                         {song.name} : {song.artist}
                         <button onClick={( ev )=>handleEliminar(ev, song.key)} className='btn btn-danger'>Eliminar</button>
                       </li>
@@ -101,7 +101,7 @@ function App() {
                   })
                 : songs.map(( song )=> {
                   return  song.name.includes(searchText) || song.artist.includes(searchText) ? <div key={song.key}>
-                  <li  className="list-group-item d-flex justify-content-between">
+                  <li  className="list-group-item d-flex justify-content-between mb-1 rounded bg-primary text-white fw-bold p-3">
                     {song.name} : {song.artist}
                     <button onClick={( ev )=>handleEliminar(ev, song.key)} className='btn btn-danger'>Eliminar</button>
                   </li>
